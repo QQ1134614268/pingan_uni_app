@@ -70,7 +70,7 @@
                 <br/>
                 {{txt_const.txt14}}
             </view>
-            <view style="display:inline-block;">
+            <view style="display:inline-block;" @tap="open_account">
                 <img src="/static/logo.png">
                 <br/>
                 {{txt_const.txt15}}
@@ -110,7 +110,13 @@
         onLoad() {
 
         },
-        methods: {}
+        methods: {
+			open_account(){
+				uni.navigateTo({
+					url: '../start/start',
+				});
+			}
+		}
     }
 
 
