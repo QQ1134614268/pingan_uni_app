@@ -2,16 +2,16 @@
     <view>
         <view class='all_module_yellow'>
             <view class="div_block">
-                {{txt_const.txt1}}
+                平安期货
             </view>
             <view class="div_block">
-                {{txt_const.txt2}}
+                平安集团旗下唯一大宗商品交易平台
             </view>
             <view class="div_block">
-                {{txt_const.txt3}}
+                客服热线: 400-8888-933
             </view>
             <view class="div_block">
-                {{txt_const.txt4}}
+                (交易日8:30-凌晨02:30)
             </view>
         </view>
         <view class='all_module_white div_blue' style="text-align:left">
@@ -19,12 +19,12 @@
                 <img src="/static/logo.png" style="height: 20%;width:100% ;margin :0cm;">
             </view>
             <view style="display: inline-block">
-                {{txt_const.txt5}}
+                三月股指原油交易月
                 <br>
-                {{txt_const.txt6}}
+                新用户最高可赢850元加油卡
             </view>
             <view style="display: inline-block">
-                {{txt_const.txt7}}
+                立即参与
             </view>
         </view>
 
@@ -33,29 +33,29 @@
                 <view style="display: inline-block; text-align:left">
                     <img src="/static/logo.png">
                     <br/>
-                    {{txt_const.txt8}}
+                    保证金计算器
                 </view>
                 <view style="display: inline-block; text-align:left">
                     <img src="/static/logo.png">
                     <br/>
-                    {{txt_const.txt9}}
+                    适当性测试
                 </view>
                 <view style="display: inline-block; text-align:left">
                     <img src="/static/logo.png">
                     <br/>
-                    {{txt_const.txt10}}
+                    交易提醒
                 </view>
             </view>
             <view style="text-align:left">
                 <view style="display: inline-block; text-align:left">
                     <img src="/static/logo.png">
                     <br/>
-                    {{txt_const.txt11}}
+                    特殊品种开户
                 </view>
                 <view style="display: inline-block; text-align:left">
                     <img src="/static/logo.png">
                     <br/>
-                    {{txt_const.txt12}}
+                    客服热线
                 </view>
             </view>
         </view>
@@ -63,17 +63,17 @@
             <view style="display:inline-block;">
                 <img src="/static/logo.png">
                 <br/>
-                {{txt_const.txt13}}
+                业务服务
             </view>
             <view style="display:inline-block;">
                 <img src="/static/logo.png">
                 <br/>
-                {{txt_const.txt14}}
+                交易服务
             </view>
-            <view style="display:inline-block;" @tap="open_account">
+            <view @tap="open_account" style="display:inline-block;">
                 <img src="/static/logo.png">
                 <br/>
-                {{txt_const.txt15}}
+                开户办理
             </view>
         </view>
     </view>
@@ -86,37 +86,19 @@
 
         name: 'home',
         data() {
-            return {
-                txt_const: {
-                    txt1: '平安期货',
-                    txt2: '平安集团旗下唯一大宗商品交易平台',
-                    txt3: '客服热线: 400-8888-933',
-                    txt4: '(交易日8:30-凌晨02:30)',
-                    txt5: '三月股指原油交易月',
-                    txt6: '新用户最高可赢850元加油卡',
-                    txt7: '立即参与',
-                    txt8: '保证金计算器',
-                    txt9: '适当性测试',
-                    txt10: '交易提醒',
-                    txt11: '特殊品种开户',
-                    txt12: '客服热线',
-                    txt13: '业务服务',
-                    txt14: '交易服务',
-                    txt15: '开户办理',
-                }
-            }
+            return {}
 
         },
         onLoad() {
 
         },
         methods: {
-			open_account(){
-				uni.navigateTo({
-					url: '../start/start',
-				});
-			}
-		}
+            open_account() {
+                uni.navigateTo({
+                    url: '../start/start',
+                });
+            }
+        }
     }
 
 

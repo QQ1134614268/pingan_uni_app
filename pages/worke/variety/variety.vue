@@ -1,20 +1,16 @@
 <template>
-	<view>
-		螺纹钢
-	</view>
+    <view>
+        螺纹钢
+    </view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				
-			}
-		},
-		methods: {
-			
-		}
-	}
+    export default {
+        data() {
+            return {}
+        },
+        methods: {}
+    }
 </script>
 
 <style>
