@@ -1,9 +1,9 @@
 <template>
     <view>
-        <view>
-            <view class="active"></view>
-            <view class="active"></view>
-            <view class="active"></view>
+        <view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(item,index) in list" :key="index">
+            <view class="uni-list-cell-navigate uni-navigate-right">
+                {{item}}
+            </view>
         </view>
 
     </view>
@@ -14,7 +14,10 @@
         data() {
             return {}
         },
-        methods: {}
+        methods:{
+        },
+        onload:{
+        },
     }
 </script>
 

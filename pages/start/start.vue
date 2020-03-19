@@ -1,36 +1,37 @@
 <template>
     <view>
-        <view>
-            <view style="display: inline-block; width: 33%;">
-                <image src="/static/logo.png" style="width: 50upx;height: 50upx;"></image>
-            </view>
-            <view style="display: inline-block; width: 33%;">
-                在线开户
-            </view>
-            <view style="display: inline-block; width: 33%;">
-                客服
-            </view>
+        <view style="text-align: center;font-weight: bold;">
+            <span style="color: #EB344A;">开户准备材料</span>
         </view>
-        <view>开户准备材料</view>
         <view>
-            <view style="display: inline-block;">
-                <view>1</view>
+            <view style="display: inline-block; width: 33%">
+                <view>
+                    <img src="/static/1.png" style="width: 80rpx; height: 100rpx">
+                </view>
                 <view>身份证原件</view>
             </view>
-            <view style="display: inline-block;">
-                <view>2</view>
+            <view style="display: inline-block; width: 33%">
+                <view><img src="/static/2.png" style="width: 100rpx; height: 100rpx">
+                </view>
                 <view>银行卡</view>
             </view>
-            <view style="display: inline-block;">
-                <view>3</view>
+            <view style="display: inline-block; width: 33%">
+                <view><img src="/static/3.png" style="width: 100rpx; height: 100rpx">
+                </view>
                 <view>笔和白纸</view>
             </view>
         </view>
-        <view>支持的银行卡</view>
-        <view>开户时间: 交易日8:45-17:45</view>
-        <view>下载开户APP</view>
-        <view>交易日15点前完成开户,最快当天夜盘可参与交易</view>
-        <view>客服热线: 400-8888-933</view>
+        <view @tap="search_bank" style="text-align: center;font-size: 25px">支持的银行卡></view>
+        <view style="text-align: center;color: #BBBBBB;margin: 10% 10% 5% 0;">开户时间: 交易日8:45-17:45</view>
+        <view style="background-color: #EB344A; text-align: center;color: white;font-size: 30px;"><a
+                href="http://www.baidu.com">下载开户APP</a></view>
+        <view style="text-align: center;color: #EB344A;font-size: 10px;">交易日15点前完成开户,最快当天夜盘可参与交易</view>
+        <view style="text-align: center;font-size: 20px;margin: 20% 0;">客服热线: 400-8888-933</view>
+        <view class="active" style="display:flex">
+            <span>常见问题</span>
+            <span>|  银期转账  |</span>
+            <span>关注平安期货</span>
+        </view>
     </view>
 </template>
 
@@ -44,7 +45,14 @@
             // 	title: "在线开户"
             // });
         },
-        methods: {}
+        methods: {
+            search_bank() {
+                console.log("search_bank")
+                uni.navigateTo({
+                    url: './support_bank/support_bank',
+                });
+            }
+        }
     }
 </script>
 

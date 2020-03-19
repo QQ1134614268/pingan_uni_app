@@ -20,6 +20,10 @@
       "style": {}
     },
     {
+      "path": "pages/start/support_bank/support_bank",
+      "style": {}
+    },
+    {
       "path": "pages/start/answer/answer",
       "style": {}
     },
@@ -33,6 +37,14 @@
     },
     {
       "path": "pages/common/common",
+      "style": {}
+    },
+    {
+      "path": "pages/common/attention_public",
+      "style": {}
+    },
+    {
+      "path": "pages/common/customer_service",
       "style": {}
     },
     {
