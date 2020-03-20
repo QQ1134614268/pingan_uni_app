@@ -14,6 +14,8 @@
 
 <style>
     /*每个页面公共css */
+    @import "common/uni.css";
+
     .title {
         font-size: 50px;
         text-align: center;
