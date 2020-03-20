@@ -34,29 +34,29 @@
 			</view>
 		</view>
 
-		<view class='all_module_white' style="margin-top: 20rpx;">
-			<view style="text-align:left;margin-top: 20rpx;">
-				<view @tap="calculator_margin" style="display: inline-block; width: 33%;">
+		<view style="margin:20rpx 10rpx;text-align:center;">
+			<view style="display: flex;">
+				<view @tap="calculator_margin" style=" width: 33%;">
 					<view>
 						<img src="/static/jisuanqi.png" style="width: 80rpx;height: 80rpx">
 					</view>
 					<view>保证金计算器</view>
 				</view>
-				<view style="display: inline-block; width: 33%">
+				<view style="width: 33%">
 					<img src="/static/jisuanqi.png" style="width: 80rpx;height: 80rpx">
 					<view>适当性测试</view>
 				</view>
-				<view @tap="reminder_trading" style="display: inline-block; width: 33%">
+				<view @tap="reminder_trading" style=" width: 33%">
 					<img src="/static/jisuanqi.png" style="width: 80rpx;height: 80rpx">
 					<view>交易提醒</view>
 				</view>
 			</view>
-			<view style="text-align:left;margin-top: 20rpx;">
-				<view @tap="open_special_account" style="display: inline-block; width: 33%">
+			<view style="margin-top: 20rpx;display: flex;">
+				<view @tap="open_special_account" style="width: 33%">
 					<img src="/static/jisuanqi.png" style="width: 80rpx;height: 80rpx">
 					<view>特殊品种开户</view>
 				</view>
-				<view @click="get_customer_service('center', 'tip')" style="display: inline-block; width: 33%">
+				<view @click="get_customer_service('center', 'tip')" style="width: 33%">
 					<img src="/static/jisuanqi.png" style="width: 80rpx;height: 80rpx">
 					<view>
 						客服热线
@@ -64,22 +64,31 @@
 				</view>
 			</view>
 		</view>
-		<view style="display:flex;justify-content: space-between;position: fixed;bottom: 0rpx;width: 100%;background-color: yellow; float: bottom">
+		<view style="text-align:center;display:flex;justify-content: space-between;position: fixed;bottom: 0rpx;width: 100%;background-color: yellow; float: bottom">
 			<view>
-				<img src="/static/yewu.png" style="width: 80rpx;height: 80rpx">
-				<br />
-				业务服务
+				<view>
+					<img src="/static/yewu.png" style="width: 80rpx;height: 80rpx">
+				</view>
+				<view>
+					业务服务
+				</view>
 			</view>
 			<view>
-				<img src="/static/yewu.png" style="width: 80rpx;height: 80rpx">
-				<br />
-				交易服务
+				<view>
+					<img src="/static/yewu.png" style="width: 80rpx;height: 80rpx">
+				</view>
+				<view>
+					交易服务
+				</view>
 			</view>
-			<view @tap="open_account">
-				<img src="/static/yewu.png" style="width: 80rpx;height: 80rpx">
-				<br />
-				开户办理
+			<view>
+				<view @tap="open_account">
+					<img src="/static/yewu.png" style="width: 80rpx;height: 80rpx">
+				</view>
+				<view>开户办理</view>
 			</view>
+
+
 		</view>
 		<uni-popup ref="showtip" :type="center" :mask-click="false" @change="change">
 			<view class="uni-tip">

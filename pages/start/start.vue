@@ -3,20 +3,20 @@
         <view style="text-align: center;font-weight: bold;">
             <span style="color: #EB344A;">开户准备材料</span>
         </view>
-        <view style="display:flex;justify-content: space-around;">
-            <view style="display: inline-block; width: 33%">
+        <view style="display:flex;justify-content: space-around;text-align: center;">
+            <view style="width: 33%">
                 <view>
                     <img src="/static/1.png" style="width: 80rpx; height: 100rpx">
                 </view>
                 <view>身份证原件</view>
             </view>
-            <view style="display: inline-block; width: 33%">
+            <view style="width: 33%">
                 <view>
                     <img src="/static/2.png" style="width: 100rpx; height: 100rpx">
                 </view>
                 <view>银行卡</view>
             </view>
-            <view style="display: inline-block; width: 33%">
+            <view style="width: 33%">
                 <view>
                     <img src="/static/3.png" style="width: 100rpx; height: 100rpx">
                 </view>
