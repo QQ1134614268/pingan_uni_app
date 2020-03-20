@@ -1,6 +1,6 @@
 <template>
     <view>
-		<uni-popup :mask-click="false" ref="showtip">
+        <uni-popup :mask-click="false" ref="showtip">
             <view class="uni-tip">
                 <attp></attp>
                 <view class="uni-tip-group-button">

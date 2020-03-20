@@ -14,19 +14,22 @@
 
 <style>
     /*每个页面公共css */
-    .title{
+    .title {
         font-size: 50px;
-        text-align:center;
+        text-align: center;
     }
-    .content{
+
+    .content {
         font-size: 25px;
-        text-align:center;
+        text-align: center;
     }
-    .note{
+
+    .note {
         font-size: 20px;
-        text-align:center;
+        text-align: center;
     }
-    .color{
+
+    .color {
         color: #FF9900;
     }
 

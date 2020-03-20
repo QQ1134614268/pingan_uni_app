@@ -1,7 +1,7 @@
 <template>
     <view>
-        <view class="active"
-              style="display: flex;justify-content: space-around;background-color: #EB344A; color: white;">
+        <view
+                style="display: flex;justify-content: space-around;background-color: #EB344A; color: white;">
             <view>金融</view>
             <view>原油</view>
             <view>铁矿石</view>
@@ -27,7 +27,7 @@
         <acc_com></acc_com>
         <uni-popup :mask-click="false" ref="showtip">
             <view class="uni-tip">
-                <atpu :title="title" :content="content" :phone="phone"></atpu>
+                <atpu :content="content" :phone="phone" :title="title"></atpu>
                 <view class="uni-tip-group-button">
                     <text @click="cancel('tip')" class="uni-tip-button">取消</text>
                     <text @click="makePhoneCall('tip')" class="uni-tip-button">拨打</text>

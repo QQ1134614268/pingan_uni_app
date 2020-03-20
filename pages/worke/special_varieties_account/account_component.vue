@@ -33,8 +33,7 @@
             this.$refs['show_attention'].close()
         },
         data() {
-            return {
-            }
+            return {}
         },
         methods: {
             attention_public(open) {
