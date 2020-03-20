@@ -1,6 +1,6 @@
 <template>
 	<view style="">
-		<view class='background-color-y' style="text-align:center;color: white ">
+		<view style="background-color:#FF9900 ;text-align:center;color: white ">
 			<view class="title">
 				平安期货
 			</view>
@@ -56,16 +56,15 @@
 					<img src="/static/jisuanqi.png" style="width: 80rpx;height: 80rpx">
 					<view>特殊品种开户</view>
 				</view>
-				<view @click="togglePopup('center', 'tip')" style="display: inline-block; width: 33%">
+				<view @click="get_customer_service('center', 'tip')" style="display: inline-block; width: 33%">
 					<img src="/static/jisuanqi.png" style="width: 80rpx;height: 80rpx">
 					<view>
 						客服热线
 					</view>
-
 				</view>
 			</view>
 		</view>
-		<view style="display:flex;justify-content: space-between;position: fixed;bottom: var(--window-bottom);width: 100%;background-color: yellow; float: bottom">
+		<view style="display:flex;justify-content: space-between;position: fixed;bottom: 0rpx;width: 100%;background-color: yellow; float: bottom">
 			<view>
 				<img src="/static/yewu.png" style="width: 80rpx;height: 80rpx">
 				<br />
@@ -87,7 +86,7 @@
 				<atpu></atpu>
 				<view class="uni-tip-group-button">
 					<text class="uni-tip-button" @click="cancel('tip')">取消</text>
-					<text class="uni-tip-button" @click="cancel('tip')">确定</text>
+					<text class="uni-tip-button" @click="makePhoneCall('tip')">拨打</text>
 				</view>
 			</view>
 		</uni-popup>
@@ -96,10 +95,12 @@
 
 <script>
 	import uniPopup from '@/components/uni-popup/uni-popup.vue'
-	import atpu from "../common/customer_service.vue"
+	import atpu from "@/pages/common/customer_service.vue"
 
 	export default {
+		onLoad() {
 
+		},
 		onBackPress() {
 			this.$refs['showtip'].close()
 		},
@@ -116,34 +117,31 @@
 				type: '',
 			}
 		},
-		onLoad() {
-
-		},
 		methods: {
-			togglePopup(type, open) {
-				console.log(888)
-				switch (type) {
-					case 'top':
-						this.content = '顶部弹出 popup'
-						break
-
-					case 'bottom':
-						this.content = '底部弹出 popup'
-						break
-					case 'center':
-						this.content = '居中弹出 popup'
-						break
-				}
-				this.type = type
-				this.$nextTick(() => {
-					this.$refs['show' + open].open()
-				})
+			get_customer_service(type, open) {
+				this.$refs['show' + open].open()
 			},
 			cancel(type) {
 				this.$refs['show' + type].close()
 			},
+			makePhoneCall(type) {
+				this.$refs['show' + type].close()
+				uni.makePhoneCall({
+					phoneNumber: '4008888933',
+					success: (res) => {
+						console.log('调用成功!')
+					},
+					fail: (res) => {
+						console.log('调用失败!')
+					}
+				})
+			},
 			change(e) {
 				console.log('是否打开:' + e.show)
+			},
+			// 显示弹窗事件（处理传参）
+			show() {
+				this["showtip"] = true
 			},
 			open_account() {
 				console.log("open_account")
@@ -166,268 +164,11 @@
 					url: '../worke/special_varieties_account/special_varieties_account',
 				});
 			},
-			get_customer_service() {
-				// uni.navigateTo({
-				// 	url: '../worke/margin_calculator/margin_calculator',
-				// });
-			},
-			// 显示弹窗事件（处理传参）
-			show() {
-				this["showtip"] = true
-			},
 
 		}
 	}
 </script>
 
 <style>
-	.all_module_yellow {
-		background-color: yellow;
-	}
-
-	/* 头条小程序组件内不能引入字体 */
-	/* #ifdef MP-TOUTIAO */
-	@font-face {
-		font-family: uniicons;
-		font-weight: normal;
-		font-style: normal;
-		src: url('~@/static/uni.ttf') format('truetype');
-	}
-
-	/* #endif */
-
-	/* #ifndef APP-NVUE */
-	page {
-		display: flex;
-		flex-direction: column;
-		box-sizing: border-box;
-		background-color: #efeff4;
-		min-height: 100%;
-		height: auto;
-	}
-
-	view {
-		font-size: 14px;
-		line-height: inherit;
-	}
-
-	.example {
-		padding: 0 15px 15px;
-	}
-
-	.example-info {
-		padding: 15px;
-		color: #3b4144;
-		background: #ffffff;
-	}
-
-	.example-body {
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: center;
-		padding: 0;
-		font-size: 14px;
-		background-color: #ffffff;
-	}
-
-	/* #endif */
-	.example {
-		padding: 0 15px;
-	}
-
-	.example-info {
-		/* #ifndef APP-NVUE */
-		display: block;
-		/* #endif */
-		padding: 15px;
-		color: #3b4144;
-		background-color: #ffffff;
-		font-size: 14px;
-		line-height: 20px;
-	}
-
-	.example-info-text {
-		font-size: 14px;
-		line-height: 20px;
-		color: #3b4144;
-	}
-
-
-	.example-body {
-		flex-direction: column;
-		padding: 15px;
-		background-color: #ffffff;
-	}
-
-	.word-btn-white {
-		font-size: 18px;
-		color: #FFFFFF;
-	}
-
-	.word-btn {
-		/* #ifndef APP-NVUE */
-		display: flex;
-		/* #endif */
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
-		border-radius: 6px;
-		height: 48px;
-		margin: 15px;
-		background-color: #007AFF;
-	}
-
-	.word-btn--hover {
-		background-color: #4ca2ff;
-	}
-
-
-	.example-body {
-		/* #ifndef APP-NVUE */
-		display: block;
-		/* #endif */
-		padding: 5px 15px;
-	}
-
-	.button {
-		flex: 1;
-		margin: 10px 0;
-	}
-
-	.popup-content {
-		/* #ifndef APP-NVUE */
-		display: block;
-		/* #endif */
-		background-color: #fff;
-		padding: 15px;
-		font-size: 14px;
-	}
-
-	/* 提示窗口 */
-	.uni-tip {
-		/* #ifndef APP-NVUE */
-		display: flex;
-		flex-direction: column;
-		/* #endif */
-		padding: 15px;
-		width: 300px;
-		background-color: #fff;
-		border-radius: 10px;
-	}
-
-	.uni-tip-title {
-		margin-bottom: 10px;
-		text-align: center;
-		font-weight: bold;
-		font-size: 16px;
-		color: #333;
-	}
-
-	.uni-tip-content {
-		/* padding: 15px;
-	 */
-		font-size: 14px;
-		color: #666;
-	}
-
-	.uni-tip-group-button {
-		/* #ifndef APP-NVUE */
-		display: flex;
-		/* #endif */
-		flex-direction: row;
-		margin-top: 20px;
-	}
-
-	.uni-tip-button {
-		flex: 1;
-		text-align: center;
-		font-size: 14px;
-		color: #3b4144;
-	}
-
-	/* 插屏广告 */
-	.uni-image {
-		position: relative;
-	}
-
-	.image {
-		width: 200px;
-		height: 200px;
-	}
-
-	.uni-image-close {
-		margin-top: 20px;
-		text-align: center;
-	}
-
-	/* 底部分享 */
-	.uni-share {
-		/* #ifndef APP-NVUE */
-		display: flex;
-		flex-direction: column;
-		/* #endif */
-		background-color: #fff;
-	}
-
-	.uni-share-title {
-		line-height: 60rpx;
-		font-size: 24rpx;
-		padding: 15rpx 0;
-		text-align: center;
-	}
-
-	.uni-share-content {
-		/* #ifndef APP-NVUE */
-		display: flex;
-		/* #endif */
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: center;
-		padding: 15px;
-	}
-
-	.uni-share-content-box {
-		/* #ifndef APP-NVUE */
-		display: flex;
-		/* #endif */
-		flex-direction: column;
-		align-items: center;
-		width: 200rpx;
-	}
-
-	.uni-share-content-image {
-		/* #ifndef APP-NVUE */
-		display: flex;
-		/* #endif */
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		width: 60rpx;
-		height: 60rpx;
-		overflow: hidden;
-		border-radius: 10rpx;
-	}
-
-	.content-image {
-		width: 60rpx;
-		height: 60rpx;
-	}
-
-	.uni-share-content-text {
-		font-size: 26rpx;
-		color: #333;
-		padding-top: 5px;
-		padding-bottom: 10px;
-	}
-
-	.uni-share-btn {
-		height: 90rpx;
-		line-height: 90rpx;
-		font-size: 14px;
-		border-top-color: #f5f5f5;
-		border-top-width: 1px;
-		border-top-style: solid;
-		text-align: center;
-		color: #666;
-	}
+	@import url("../../static/uni_pop.css");
 </style>

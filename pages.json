@@ -36,6 +36,10 @@
       "style": {}
     },
     {
+      "path": "pages/worke/trading_reminder/trading_reminder",
+      "style": {}
+    },
+    {
       "path": "pages/common/common",
       "style": {}
     },

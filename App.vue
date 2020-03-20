@@ -29,7 +29,5 @@
     .color{
         color: #FF9900;
     }
-    .background-color-y{
-        background-color: #FF9900;
-    }
+
 </style>

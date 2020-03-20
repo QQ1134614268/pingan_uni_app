@@ -40,16 +40,12 @@
     import uniPopup from '@/components/uni-popup/uni-popup.vue'
     import atpu from "@/pages/common/customer_service.vue"
     import attp from "@/pages/common/attention_public.vue"
-	import acc_com from "./account_component.vue"
-
-
     // 特殊品种开户
     export default {
         components: {
             atpu,
             attp,
             uniPopup,
-			acc_com,
         },
         onBackPress() {
             this.$refs['showtip'].close()

@@ -1,9 +1,9 @@
 <template>
 	<view>
-		<view class="active" style="margin: 5% 10%;font-size: 15px;">
+		<view style="margin: 5% 10%;font-size: 15px;">
 			目前支持11家银行卡交易，其中四家无需您自行办理银期关联,剩余七家需通过网银或银行app进行银期。关联，可入金交易。详细操作指引可关注平安期货微服务公众号，回复银行名称查询。
 		</view>
-		<view class="active" style="margin:20px 0 0 0;font-weight: bold">无办理银期关联</view>
+		<view style="margin:20px 0 0 0;font-weight: bold">无办理银期关联</view>
 		<view class="active">
 			<view class="table" style="margin: 0 100rpx">
 				<view class="tr">
@@ -20,8 +20,8 @@
 				</view>
 			</view>
 		</view>
-		<view class="active" style="color: #FF0000; font-size: 10px">注：招商银行需前往银行端进行银期激活</view>
-		<view class="active" style="margin:20px 0 0 0;font-weight: bold">要办理银期关联</view>
+		<view style="color: #FF0000; font-size: 10px">注：招商银行需前往银行端进行银期激活</view>
+		<view style="margin:20px 0 0 0;font-weight: bold">要办理银期关联</view>
 		<view class="active">
 			<view class="table" style="margin: 0 100rpx">
 				<view class="tr">
@@ -47,21 +47,40 @@
 				注：工商银行银期办理时间仅为交易日8:30-15:30，
 			</span>
 			<span style="font-size: 10px">其他银行还支持交易日20:30-凌晨02:30办理。</span>
-			
+
 		</view>
-		<view class="active" style="display:flex">
-			<span @tap="find_common_problem">常见问题</span>
-			<span>| 银期转账 |</span>
-			<span @tap="attention_public">关注平安期货</span>
+		<view style="display:flex;justify-content: space-around;">
+			<view @tap="find_common_problem">常见问题</view>
+			<view>| 银期转账 |</view>
+			<view @tap="attention_public">关注平安期货</view>
 		</view>
+
+		<uni-popup :mask-click="false" ref="showtip">
+			<view class="uni-tip">
+				<attp></attp>
+				<view class="uni-tip-group-button">
+					<text @click="cancel('tip')" class="uni-tip-button">取消</text>
+				</view>
+			</view>
+		</uni-popup>
 	</view>
 </template>
 
 <script>
+	import uniPopup from '@/components/uni-popup/uni-popup.vue'
+	import attp from "@/pages/common/attention_public.vue"
+
 	// 支持的银行
 	// 客服
 	export default {
 
+		onBackPress() {
+			this.$refs['showtip'].close()
+		},
+		components: {
+			uniPopup,
+			attp,
+		},
 		name: 'home',
 		data() {
 			return {}
@@ -70,29 +89,25 @@
 
 		},
 		methods: {
+			attention_public() {
+				this.$nextTick(() => {
+					this.$refs['show' + 'tip'].open()
+				})
+			},
+			cancel(type) {
+				this.$refs['show' + type].close()
+			},
 			find_common_problem() {
 				uni.navigateTo({
 					url: '../common_problem/common_problem',
 				});
 			},
-			attention_public() {
-				uni.showModal({
-					title: '提示',
-					content: '这是一个模态弹窗',
-					success: function (res) {
-						if (res.confirm) {
-							console.log('用户点击确定');
-						} else if (res.cancel) {
-							console.log('用户点击取消');
-						}
-					}
-				});
-			}
 		}
 	}
 </script>
 
 <style>
+	@import url("../../../static/uni_pop.css");
 	.table {
 		border-right: 0;
 		border-bottom: 0;

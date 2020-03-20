@@ -14,7 +14,7 @@
 			<view class="active">开户视频无法链接怎么办?</view>
 			<view class="active">开户视频无法链接怎么办?</view>
 		</view>
-		<view class="active" style="text-align: center;position: fixed;bottom: var(--window-bottom);width: 100%;">平安期货</view>
+		<view style="text-align: center;position: fixed;bottom: 0rpx;width: 100%;">平安期货</view>
 	</view>
 </template>
 
