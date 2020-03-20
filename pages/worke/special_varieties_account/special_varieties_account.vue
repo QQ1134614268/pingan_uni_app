@@ -52,7 +52,7 @@
             acc_com,
         },
         onBackPress() {
-            this.$refs['showtip'].close()
+            this.$refs['showtip'].close();
             this.$refs['show_attention'].close()
         },
         data() {
@@ -76,7 +76,7 @@
                 this.$refs['show' + type].close()
             },
             makePhoneCall(type) {
-                this.$refs['show' + type].close()
+                this.$refs['show' + type].close();
                 uni.makePhoneCall({
                     phoneNumber: '4008888933',
                     success: (res) => {

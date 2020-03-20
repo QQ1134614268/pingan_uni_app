@@ -29,7 +29,7 @@
             uniPopup,
         },
         onBackPress() {
-            this.$refs['showtip'].close()
+            this.$refs['showtip'].close();
             this.$refs['show_attention'].close()
         },
         data() {

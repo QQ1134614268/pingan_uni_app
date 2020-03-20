@@ -134,7 +134,7 @@
                 this.$refs['show' + type].close()
             },
             makePhoneCall(type) {
-                this.$refs['show' + type].close()
+                this.$refs['show' + type].close();
                 uni.makePhoneCall({
                     phoneNumber: '4008888933',
                     success: (res) => {
@@ -153,7 +153,7 @@
                 this["showtip"] = true
             },
             open_account() {
-                console.log("open_account")
+                console.log("open_account");
                 uni.navigateTo({
                     url: '../start/start',
                 });

@@ -65,7 +65,7 @@
         },
         methods: {
             search_bank() {
-                console.log("search_bank")
+                console.log("search_bank");
                 uni.navigateTo({
                     url: './support_bank/support_bank',
                 });
